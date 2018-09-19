@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 15
-  productGUID: cb45fd4f01fe87043a46e4390668f607
+  productGUID: ff933d344d98cc04989f2d3c41d35558
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: Breaking Boss 1
+  productName: Scripting Test
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -646,8 +646,8 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 2193ac0c-f80a-4f8f-84ad-f426d14ab402
-  projectName: Copy & Delete
+  cloudProjectId: 6621d981-4dbf-427b-af1d-4eb62fe60370
+  projectName: Scripting Test
   organizationId: tmac4930
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
