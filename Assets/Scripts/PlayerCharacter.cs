@@ -13,3 +13,4 @@ public class PlayerCharacter : MonoBehaviour {
 	void Update () {
 	//Horizontal	
 	}
+}
