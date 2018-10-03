@@ -224,6 +224,7 @@ GameObject:
   - component: {fileID: 300824615}
   - component: {fileID: 300824614}
   - component: {fileID: 300824613}
+  - component: {fileID: 300824616}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -334,6 +335,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &300824616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 300824611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75138b3afff50b34e8a406ea209a2238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 0
+  name: Mario
+  jumpHeight: 5
+  speed: 5
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
