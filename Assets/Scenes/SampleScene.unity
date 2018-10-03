@@ -350,6 +350,7 @@ MonoBehaviour:
   name: Mario
   jumpHeight: 5
   speed: 5
+  RB2D: {fileID: 300824613}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
