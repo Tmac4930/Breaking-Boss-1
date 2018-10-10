@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCharacter : MonoBehaviour
 {
     [SerializeField]
-    private float jump, maxSpeed, accelerationForce = 5;
+    private float jumpForce, maxSpeed, accelerationForce = 5;
 
     [SerializeField]
     private Rigidbody2D rb2D;
@@ -21,12 +21,21 @@ public class PlayerCharacter : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
        
+        if (Input.GetButtonDown("Jump"))
+        {
+            rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        }
     }
 
 private void FixedUpdate()
     {
-        rb2D.AddForce(Vector2.right * horizontalInput * accelerationForce);
-        Vector2 clampedVolocity = rb2D.velocity;
-        clampedVolocity.x = Mathf.Clamp(rb2D.velocity.x, -maxSpeed, maxSpeed);
+        Move();
+    }
+    private void Move()
+    {     
+            rb2D.AddForce(Vector2.right * horizontalInput * accelerationForce);
+            Vector2 clampedVelocity = rb2D.velocity;
+            clampedVelocity.x = Mathf.Clamp(rb2D.velocity.x, -maxSpeed, maxSpeed);
+            rb2D.velocity = clampedVelocity;
     }
 }    
