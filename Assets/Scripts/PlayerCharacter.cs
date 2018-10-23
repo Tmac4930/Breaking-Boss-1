@@ -11,9 +11,15 @@ public class PlayerCharacter : MonoBehaviour
     private Rigidbody2D rb2D;
 
     [SerializeField]
+    private Collider2D groundDetectTrigger;
+
+    [SerializeField]
     private ContactFilter2D groundContactFilter;
-    //private bool isOnGround;
+
+    private bool isOnGround;
     private float horizontalInput;
+    private Collider2D[] groundhitDetectionResults = new Collider2D[20];
+
     private void Start()
     {
         
@@ -21,18 +27,34 @@ public class PlayerCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-       
-        if (Input.GetButtonDown("Jump"))
+        UpdateIsOnGround();
+        UpdateHorizontalInput();
+        HandleJumpInput();
+    }
+
+    private void FixedUpdate()
+    {
+        Move();
+    }
+
+    private void HandleJumpInput()
+    {
+
+        if (Input.GetButtonDown("Jump") && isOnGround)
         {
             rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
-
-private void FixedUpdate()
+    private void UpdateIsOnGround()
     {
-        Move();
+        isOnGround = groundDetectTrigger.OverlapCollider(groundContactFilter, groundhitDetectionResults) > 0;
+        
     }
+    private void UpdateHorizontalInput()
+    {
+        horizontalInput = Input.GetAxis("Horizontal");
+    }
+ 
     private void Move()
     {     
             rb2D.AddForce(Vector2.right * horizontalInput * accelerationForce);
