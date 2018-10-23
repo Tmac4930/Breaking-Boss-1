@@ -10,7 +10,9 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField]
     private Rigidbody2D rb2D;
 
-    private bool isOnGround;
+    [SerializeField]
+    private ContactFilter2D groundContactFilter;
+    //private bool isOnGround;
     private float horizontalInput;
     private void Start()
     {
