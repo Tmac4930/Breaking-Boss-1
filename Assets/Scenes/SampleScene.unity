@@ -448,8 +448,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 8
-  maxSpeed: 36
-  accelerationForce: 16
+  maxSpeed: 26
+  accelerationForce: 10
   rb2D: {fileID: 300824613}
   groundDetectTrigger: {fileID: 300824617}
   groundContactFilter:
@@ -931,8 +931,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1801346617}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4849477, y: -1.7691728, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.52, y: -1.7691728, z: 0}
+  m_LocalScale: {x: 0.8439126, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -963,9 +963,10 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.13841593, y: 0.2841016}
-  - {x: -0.000049710274, y: 0.56820357}
-  - {x: 0.16424274, y: 0.23244667}
+  - {x: -0.20267832, y: 0.15450358}
+  - {x: 0.00020425886, y: 0.5026294}
+  - {x: 0.1305977, y: 0.2709173}
+  - {x: 0.18598786, y: 0.17739391}
 --- !u!1 &1873282282 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1187377993249730, guid: 1ef70de49fd1a514f9daeb00d69c69fb,
