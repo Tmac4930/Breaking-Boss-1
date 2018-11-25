@@ -7,7 +7,7 @@ public class Collectable : MonoBehaviour
     private AudioSource audioSource;
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D boxCollider2D;
-    private int coinCount;
+    private static int coinCount;
 
    private void Start()
     {
