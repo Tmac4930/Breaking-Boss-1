@@ -17,6 +17,10 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField]
     private ContactFilter2D groundContactFilter;
 
+    Animator anim;
+    bool facingRight = true;
+
+
     private bool isOnGround;
     private float horizontalInput;
     private Collider2D[] groundhitDetectionResults = new Collider2D[20];
@@ -24,11 +28,12 @@ public class PlayerCharacter : MonoBehaviour
 
     private void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update()
     {
+        anim.SetBool("Ground", false);
         UpdateIsOnGround();
         UpdateHorizontalInput();
         HandleJumpInput();
@@ -37,6 +42,8 @@ public class PlayerCharacter : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+        Direction();
+        
     }
 
     private void HandleJumpInput()
@@ -50,7 +57,8 @@ public class PlayerCharacter : MonoBehaviour
     private void UpdateIsOnGround()
     {
         isOnGround = groundDetectTrigger.OverlapCollider(groundContactFilter, groundhitDetectionResults) > 0;
-        
+        anim.SetBool("Ground", isOnGround);
+
     }
     private void UpdateHorizontalInput()
     {
@@ -63,6 +71,13 @@ public class PlayerCharacter : MonoBehaviour
             Vector2 clampedVelocity = rb2D.velocity;
             clampedVelocity.x = Mathf.Clamp(rb2D.velocity.x, -maxSpeed, maxSpeed);
             rb2D.velocity = clampedVelocity;
+    }
+    private void Direction()
+    {
+        if (Move > 0 && !facingRight)
+            Flip();
+        else if (Move < 0 && facingRight)
+            Flip();
     }
 
     public void Respawn()
@@ -83,6 +98,12 @@ public class PlayerCharacter : MonoBehaviour
     {
         currentCheckPoint = newCurrentCheckpoint;
     }
-
+    void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
 
 }    

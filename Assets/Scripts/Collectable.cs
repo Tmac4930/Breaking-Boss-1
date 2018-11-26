@@ -20,7 +20,7 @@ public class Collectable : MonoBehaviour
     {
     if (collision.gameObject.CompareTag("Player"))
         {
-            debug.log("coinCount:" + coinCount);
+          
             coinCount++;
             Destroy(gameObject, audioSource.clip.length);
             spriteRenderer.enabled = false;
