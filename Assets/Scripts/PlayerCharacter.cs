@@ -43,7 +43,9 @@ public class PlayerCharacter : MonoBehaviour
     {
         Move();
         //Direction();
-        
+        UpdateAnimationParameters();
+
+
     }
 
     private void HandleJumpInput()
