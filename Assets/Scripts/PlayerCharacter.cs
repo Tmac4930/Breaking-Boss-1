@@ -52,6 +52,7 @@ public class PlayerCharacter : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isOnGround)
         {
             rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            anim.Setbool("Vspeed");
         }
     }
     private void UpdateIsOnGround()
@@ -66,11 +67,14 @@ public class PlayerCharacter : MonoBehaviour
     }
  
     private void Move()
-    {     
+    {
+
             rb2D.AddForce(Vector2.right * horizontalInput * accelerationForce);
             Vector2 clampedVelocity = rb2D.velocity;
             clampedVelocity.x = Mathf.Clamp(rb2D.velocity.x, -maxSpeed, maxSpeed);
             rb2D.velocity = clampedVelocity;
+
+            anim.SetFloat("Speed", Mathf.Abs("Horizontal"));
     }
     private void Direction()
     {
