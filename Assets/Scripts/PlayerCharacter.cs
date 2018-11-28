@@ -17,7 +17,7 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField]
     private ContactFilter2D groundContactFilter;
 
-    Animator anim;
+    public Animator anim;
     bool facingRight = true;
 
 
@@ -42,7 +42,7 @@ public class PlayerCharacter : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        Direction();
+        //Direction();
         
     }
 
@@ -52,13 +52,13 @@ public class PlayerCharacter : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isOnGround)
         {
             rb2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            anim.Setbool("Vspeed");
+           
         }
     }
     private void UpdateIsOnGround()
     {
         isOnGround = groundDetectTrigger.OverlapCollider(groundContactFilter, groundhitDetectionResults) > 0;
-        anim.SetBool("Ground", isOnGround);
+        
 
     }
     private void UpdateHorizontalInput()
@@ -74,15 +74,15 @@ public class PlayerCharacter : MonoBehaviour
             clampedVelocity.x = Mathf.Clamp(rb2D.velocity.x, -maxSpeed, maxSpeed);
             rb2D.velocity = clampedVelocity;
 
-            anim.SetFloat("Speed", Mathf.Abs("Horizontal"));
+            
     }
-    private void Direction()
-    {
-        if (Move > 0 && !facingRight)
-            Flip();
-        else if (Move < 0 && facingRight)
-            Flip();
-    }
+    //private void Direction()
+    //{
+    //    if (Move > 0 && !facingRight)
+    //        Flip();
+    //    else if (Move < 0 && facingRight)
+    //        Flip();
+    //}
 
     public void Respawn()
     {
@@ -108,6 +108,12 @@ public class PlayerCharacter : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+    void UpdateAnimationParameters()
+    {
+        anim.SetFloat("VSpeed", rb2D.velocity.y);
+        anim.SetBool("Ground", isOnGround);
+        anim.SetFloat("Speed", Mathf.Abs(horizontalInput));
     }
 
 }    
