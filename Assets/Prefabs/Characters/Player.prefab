@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1269980126159714}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.145, y: 0.7625, z: -2.541504}
+  m_LocalPosition: {x: 0, y: 0, z: -2.541504}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children: []
   m_Father: {fileID: 4633801184369458}
@@ -211,24 +211,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 18
   maxSpeed: 10
-  accelerationForce: 82
+  accelerationForce: 78
   rb2D: {fileID: 50039147160015726}
   groundDetectTrigger: {fileID: 58095737531027602}
   groundContactFilter:
-    useTriggers: 0
-    useLayerMask: 0
+    useTriggers: 1
+    useLayerMask: 1
     useDepth: 0
     useOutsideDepth: 0
     useNormalAngle: 0
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 256
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  anim: {fileID: 0}
+  anim: {fileID: 95755032787406232}
 --- !u!124 &124207381041800982
 Behaviour:
   m_ObjectHideFlags: 1

@@ -17273,6 +17273,16 @@ Prefab:
       propertyPath: m_Size.y
       value: 0.26729947
       objectReference: {fileID: 0}
+    - target: {fileID: 114848896744506478, guid: de846c481f214364d8f17d65cb69a90f,
+        type: 2}
+      propertyPath: groundContactFilter.useTriggers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114848896744506478, guid: de846c481f214364d8f17d65cb69a90f,
+        type: 2}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1919998795}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de846c481f214364d8f17d65cb69a90f, type: 2}
   m_IsPrefabParent: 0
@@ -17307,6 +17317,11 @@ Transform:
   m_Father: {fileID: 951930871}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1919998795 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95755032787406232, guid: de846c481f214364d8f17d65cb69a90f,
+    type: 2}
+  m_PrefabInternal: {fileID: 1698749608}
 --- !u!1 &2121630978
 GameObject:
   m_ObjectHideFlags: 0
@@ -17382,7 +17397,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2121630978}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.6577501, y: 0.5855, z: -2.541504}
+  m_LocalPosition: {x: 0, y: 0, z: -2.541504}
   m_LocalScale: {x: 0.19927183, y: 0.13450846, z: 0.19927183}
   m_Children: []
   m_Father: {fileID: 951930871}

@@ -18,13 +18,14 @@ public class PlayerCharacter : MonoBehaviour
     private ContactFilter2D groundContactFilter;
 
     public Animator anim;
-    bool facingRight = true;
+    
 
-
+    private bool facingRight = true;
     private bool isOnGround;
     private float horizontalInput;
     private Collider2D[] groundhitDetectionResults = new Collider2D[20];
     private CheckPoint currentCheckPoint;
+
 
     private void Start()
     {
@@ -42,9 +43,8 @@ public class PlayerCharacter : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        //Direction();
-        UpdateAnimationParameters();
 
+        Direction();
 
     }
 
@@ -60,7 +60,16 @@ public class PlayerCharacter : MonoBehaviour
     private void UpdateIsOnGround()
     {
         isOnGround = groundDetectTrigger.OverlapCollider(groundContactFilter, groundhitDetectionResults) > 0;
-        
+        Debug.Log(isOnGround);
+
+        if (isOnGround == true)
+        {
+            anim.SetBool("Ground", true);
+        }
+        else
+        {
+            anim.SetBool("Ground", false);
+        }
 
     }
     private void UpdateHorizontalInput()
@@ -78,13 +87,18 @@ public class PlayerCharacter : MonoBehaviour
 
             
     }
-    //private void Direction()
-    //{
-    //    if (Move > 0 && !facingRight)
-    //        Flip();
-    //    else if (Move < 0 && facingRight)
-    //        Flip();
-    //}
+   private void Direction()
+   {
+        UpdateAnimationParameters();
+        if (horizontalInput > 0 && !facingRight)
+        {
+            Flip();
+        }
+        else if (horizontalInput < 0 && facingRight)
+        {
+            Flip();
+        }
+    }
 
     public void Respawn()
     {
