@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerCharacter : MonoBehaviour
 {
@@ -18,18 +19,21 @@ public class PlayerCharacter : MonoBehaviour
     private ContactFilter2D groundContactFilter;
 
     public Animator anim;
-    
+    public Text countText;
+    public Text Progress;
 
     private bool facingRight = true;
     private bool isOnGround;
     private float horizontalInput;
     private Collider2D[] groundhitDetectionResults = new Collider2D[20];
     private CheckPoint currentCheckPoint;
+    private int count;
 
 
     private void Start()
     {
         anim = GetComponent<Animator>();
+        SetCountText();
     }
     // Update is called once per frame
     void Update()
@@ -124,6 +128,23 @@ public class PlayerCharacter : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("PickUp"))
+        {
+            other.gameObject.SetActive(false);
+            count = count + 1;
+            SetCountText();
+        }
+    }
+    void SetCountText()
+    {
+        countText.text = "Count: " + count.ToString();
+        if (count >= 12)
+        {
+            Progress.text = "Get to the Gate! You have all of the, crystals!";
+        }
     }
     void UpdateAnimationParameters()
     {
