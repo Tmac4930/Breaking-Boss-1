@@ -18,17 +18,26 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField]
     private ContactFilter2D groundContactFilter;
 
-    public Animator anim;
-    public Text countText;
-    public Text Progress;
+    [SerializeField]
+    private Collider2D PlayerGroundCollider; 
+
+    [SerializeField]
+    private Text countText;
+
+    [SerializeField]
+    private Text Progress;
+
+    [SerializeField]
+    private PhysicsMaterial2D playerMovingPhysicsMaterial, playerStoppingPhysicsMaterial;
 
     private bool facingRight = true;
     private bool isOnGround;
     private float horizontalInput;
     private Collider2D[] groundhitDetectionResults = new Collider2D[20];
     private CheckPoint currentCheckPoint;
-    private int count;
+    private int count = 0;
 
+    public Animator anim;
 
     private void Start()
     {
@@ -50,6 +59,22 @@ public class PlayerCharacter : MonoBehaviour
 
         Direction();
 
+        UpdatePhysicsMaterial();
+
+    }
+
+    private void UpdatePhysicsMaterial()
+    {
+        if (Mathf.Abs(horizontalInput) > 0)
+        {
+            //TODO moving material
+            PlayerGroundCollider.sharedMaterial = playerMovingPhysicsMaterial;
+        }
+        else
+        {
+            //Stop physics material
+            PlayerGroundCollider.sharedMaterial = playerStoppingPhysicsMaterial;
+        }
     }
 
     private void HandleJumpInput()
@@ -78,7 +103,8 @@ public class PlayerCharacter : MonoBehaviour
     }
     private void UpdateHorizontalInput()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+
     }
  
     private void Move()
@@ -109,6 +135,7 @@ public class PlayerCharacter : MonoBehaviour
         if(currentCheckPoint == null)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Debug.Log("Respawn triggered." );
         }
         else
         {
@@ -121,6 +148,7 @@ public class PlayerCharacter : MonoBehaviour
     public void SetCurrentCheckPoint(CheckPoint newCurrentCheckpoint)
     {
         currentCheckPoint = newCurrentCheckpoint;
+        Debug.Log("Checkpoint reached." + currentCheckPoint);
     }
     void Flip()
     {
