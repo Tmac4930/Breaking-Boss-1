@@ -129,7 +129,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 2
-  m_Material: {fileID: 6200000, guid: 2bc96d21e2b7d744c9a403aa88f6348c, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 18
   maxSpeed: 10
-  accelerationForce: 78
+  accelerationForce: 50
   rb2D: {fileID: 50039147160015726}
   groundDetectTrigger: {fileID: 58095737531027602}
   groundContactFilter:
@@ -259,9 +259,14 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  anim: {fileID: 95755032787406232}
+  PlayerGroundCollider: {fileID: 61519691061698054}
   countText: {fileID: 0}
   Progress: {fileID: 0}
+  playerMovingPhysicsMaterial: {fileID: 6200000, guid: afe3d89e18fb27e4d9c16120494a25fc,
+    type: 2}
+  playerStoppingPhysicsMaterial: {fileID: 6200000, guid: 81ab290cfcbac2c45bebac08026886b0,
+    type: 2}
+  anim: {fileID: 95755032787406232}
 --- !u!124 &124207381041800982
 Behaviour:
   m_ObjectHideFlags: 1
