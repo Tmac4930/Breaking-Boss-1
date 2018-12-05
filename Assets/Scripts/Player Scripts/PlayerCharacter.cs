@@ -30,9 +30,25 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField]
     private PhysicsMaterial2D playerMovingPhysicsMaterial, playerStoppingPhysicsMaterial;
 
+    [SerializeField]
+    private float startTimeBtwAttack;
+
+    [SerializeField]
+    private float attackRange;
+
+    [SerializeField]
+    private Transform attackPos;
+
+    [SerializeField]
+    private LayerMask whatIsEnemy;
+
+    [SerializeField]
+    private int Damage;
+
     private bool facingRight = true;
     private bool isOnGround;
     private float horizontalInput;
+    private float timeBtwAttack;
     private Collider2D[] groundhitDetectionResults = new Collider2D[20];
     private CheckPoint currentCheckPoint;
     private int count = 0;
@@ -51,6 +67,8 @@ public class PlayerCharacter : MonoBehaviour
         UpdateIsOnGround();
         UpdateHorizontalInput();
         HandleJumpInput();
+        Attack();
+
     }
 
     private void FixedUpdate()
@@ -174,11 +192,36 @@ public class PlayerCharacter : MonoBehaviour
             Progress.text = "Get to the Gate! You have all of the, crystals!";
         }
     }
+    void Attack()
+    {
+        if (timeBtwAttack <= 0)
+        {
+            if (Input.GetKey(KeyCode.E))
+            {
+                Collider2D[] enemyToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemy);
+                for (int i = 0; i < enemyToDamage.Length; i++)
+                {
+                    enemyToDamage[i].GetComponent<Enemy>().TakeDamage(Damage);
+                }
+            }
+            timeBtwAttack = startTimeBtwAttack;
+        }
+        else
+        {
+            timeBtwAttack -= Time.deltaTime;
+        }
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position, attackRange);
+    }
     void UpdateAnimationParameters()
     {
         anim.SetFloat("VSpeed", rb2D.velocity.y);
         anim.SetBool("Ground", isOnGround);
         anim.SetFloat("Speed", Mathf.Abs(horizontalInput));
+        anim.SetTrigger("attack");
     }
 
 }    
