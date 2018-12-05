@@ -202,7 +202,9 @@ public class PlayerCharacter : MonoBehaviour
                 for (int i = 0; i < enemyToDamage.Length; i++)
                 {
                     enemyToDamage[i].GetComponent<Enemy>().TakeDamage(Damage);
+                   
                 }
+                anim.SetTrigger("attack");
             }
             timeBtwAttack = startTimeBtwAttack;
         }
@@ -221,7 +223,7 @@ public class PlayerCharacter : MonoBehaviour
         anim.SetFloat("VSpeed", rb2D.velocity.y);
         anim.SetBool("Ground", isOnGround);
         anim.SetFloat("Speed", Mathf.Abs(horizontalInput));
-        anim.SetTrigger("attack");
+        
     }
 
 }    
