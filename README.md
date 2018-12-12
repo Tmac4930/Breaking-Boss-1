@@ -1,5 +1,5 @@
 # Breaking-Boss-1
-https://tchatman17.itch.io/forest-of-smilesGame:
+https://tchatman17.itch.io/forest-of-smiles
 
 Forest of Smiles 
 
