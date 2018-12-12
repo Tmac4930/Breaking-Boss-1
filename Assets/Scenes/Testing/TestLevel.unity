@@ -222,7 +222,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4141426718867512, guid: 3f44948d485868a42b4dd639856b750e, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1124012615733772, guid: 3f44948d485868a42b4dd639856b750e, type: 2}
       propertyPath: m_Name
@@ -557,7 +557,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4141426718867512, guid: 3f44948d485868a42b4dd639856b750e, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1124012615733772, guid: 3f44948d485868a42b4dd639856b750e, type: 2}
       propertyPath: m_Name
@@ -14238,7 +14238,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 788eb40e38684c347ae1e8f086b6c861, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -14633,7 +14633,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4141426718867512, guid: 3f44948d485868a42b4dd639856b750e, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1124012615733772, guid: 3f44948d485868a42b4dd639856b750e, type: 2}
       propertyPath: m_Name
@@ -15011,7 +15011,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4141426718867512, guid: 3f44948d485868a42b4dd639856b750e, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1124012615733772, guid: 3f44948d485868a42b4dd639856b750e, type: 2}
       propertyPath: m_Name
@@ -39798,7 +39798,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4141426718867512, guid: 3f44948d485868a42b4dd639856b750e, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1124012615733772, guid: 3f44948d485868a42b4dd639856b750e, type: 2}
       propertyPath: m_Name
@@ -39844,7 +39844,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4141426718867512, guid: 3f44948d485868a42b4dd639856b750e, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1124012615733772, guid: 3f44948d485868a42b4dd639856b750e, type: 2}
       propertyPath: m_Name
