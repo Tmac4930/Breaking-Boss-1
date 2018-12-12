@@ -196,7 +196,7 @@ public class PlayerCharacter : MonoBehaviour
     {
         if (timeBtwAttack <= 0)
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.Q))
             {
                 Collider2D[] enemyToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemy);
                 for (int i = 0; i < enemyToDamage.Length; i++)
