@@ -227,3 +227,5 @@ public class PlayerCharacter : MonoBehaviour
     }
 
 }    
+//considering most of this is code that he helped out with it looks fine. Again though cleaning up the empty spaces in between
+//would make this look much better.
