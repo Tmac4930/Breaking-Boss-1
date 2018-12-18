@@ -51,3 +51,6 @@ public class PlayerAttack : MonoBehaviour {
         Gizmos.DrawWireSphere(attackPos.position, attackRange);
     }
 }
+//First things first, overall style guide was followed pretty well. There was only one variable that i had trouble figuring out
+//and that was timeBtwAttack. So either changing that name or expanding the middle wrod would be good. Also clean up some of
+//empty spaces near the top including the Start function.
