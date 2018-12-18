@@ -30,3 +30,5 @@ public class Enemy : MonoBehaviour {
         
     }
 }
+//it is not specifyed whose health is being talked about here, so that can be improved upon. Also cleaning up empty spaces to
+//to condense space would look better.
