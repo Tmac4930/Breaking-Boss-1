@@ -21,3 +21,4 @@ public class DeathZone : MonoBehaviour {
         }
     }
 }
+//If you arent going to use the classes for Start and Update they should be deleted.
